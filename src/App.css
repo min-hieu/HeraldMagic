@@ -59,7 +59,8 @@ p {
 
 .fa {
   bottom: 10px;
-  margin: 4vh 10vw;
+  margin: 4vh auto;
+  width: 14vh;
   background: transparent;
   color:  #2c4bff;
   padding: 2vh;
@@ -95,22 +96,32 @@ p {
 
 .button-wrapper {
   position: relative;
-  width: 150px;
   text-align: center;
-  margin: 20% auto;
+  margin: 0vh auto;
 }
 
 .button-wrapper span.label {
+  font-family: 'IBM Plex Mono', monospace;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2vh;
+  border-radius: 5px;
+  border-color: #2c4bff;
+  border-style: solid;
   position: relative;
   z-index: 0;
-  display: inline-block;
-  width: 100%;
-  background: #00bfff;
+  background: transparent;
   cursor: pointer;
-  color: #fff;
-  padding: 10px 0;
+  color: #2c4bff;
+  padding: 2vh;
   text-transform:uppercase;
-  font-size:12px;
+  transition: 0.25s;
+}
+
+.button-wrapper span.label:hover, 
+.button-wrapper span.label:focus {
+  box-shadow: inset 0 0 0 3em #2c4bff;
+  color: #fff;
 }
 
 #bg-picker {
@@ -118,7 +129,7 @@ p {
   position: absolute;
   z-index: 1;
   width: 100%;
-  height: 50px;
+  height: 7vh;
   top: 0;
   left: 0;
   opacity: 0;
