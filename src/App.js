@@ -1,13 +1,16 @@
 import './App.css';
 import Header from './Header.js';
-import './Canvas.js';
+import Canvas from './Canvas.js';
 import Config from './Config.js';
 
 function App() {
   return (
     <div className="App">
-    <Header />
-    <Config />
+      <Header />
+      <div id="App-Body">
+        <Config />
+        <Canvas />
+      </div>
     </div>
   );
 }
