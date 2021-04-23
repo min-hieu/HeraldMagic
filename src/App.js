@@ -7,8 +7,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Config />
-      <Canvas />
+      <div id="App-Body">
+        <Config />
+        <Canvas />
+      </div>
     </div>
   );
 }

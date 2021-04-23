@@ -1,6 +1,8 @@
 function Canvas() {
     return (
-        <canvas id="mainCanvas"></canvas>
+        <div id="App-Canvas">
+            <canvas id="mainCanvas" width="360" height="360"></canvas>
+        </div>
     )
 }
 
