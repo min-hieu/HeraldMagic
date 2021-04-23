@@ -8,16 +8,11 @@ function Config() {
                     <p className="Upload-text">
                         Upload the image
                     </p>
-                    <div class="button-wrapper">
-                        <span class="label">
-                            Upload File
-                        </span>
-                        <input type="file" name="upload" id="bg-picker" class="upload-box" placeholder="Upload File"/>
-                    </div>
+                    <button class="fa fa-upload btn" id="btn-upload"><span> POST</span></button>
                 </div>
                 
                 <div id="picker" class="control-items">
-                    <a href="" class="fa fa-download" id="saver"><span> SAVE</span></a>
+                    <button class="fa fa-download btn" id="btn-save"><span> SAVE</span></button>
                 </div>
             </div>
         </div>

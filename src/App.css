@@ -53,85 +53,37 @@ p {
 .Upload-text {
   color: #174552;
   padding: 2vh;
-  padding-bottom: 4vh;
+  padding-top: 3vh;
   font-size: 4vh;
 }
 
-.fa {
+.btn {
   bottom: 10px;
-  margin: 4vh auto;
-  width: 14vh;
+  margin: 2vh auto;
+  width: 16vh;
   background: transparent;
   color:  #2c4bff;
   padding: 2vh;
   border-radius: 5px;
   border-color: #2c4bff;
   border-style: solid;
+  border-width: 3px;
   text-align: center;
-  display: block;
   text-decoration: none;
   transition: 0.25s;
+  cursor: pointer;
 }
 
-.fa span {
+.btn:hover, .btn:focus {
+  box-shadow: inset 0 0 0 3em #2c4bff;
+  color: #fff;
+}
+
+.btn span {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
   font-size: 2.5vh;
-}
-
-.fa:hover, .fa:focus {
-  box-shadow: inset 0 0 0 3em #2c4bff;
-  color: #fff;
+  margin:0;
 }
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.button-wrapper {
-  position: relative;
-  text-align: center;
-  margin: 0vh auto;
-}
-
-.button-wrapper span.label {
-  font-family: 'IBM Plex Mono', monospace;
-  width: 100%;
-  font-weight: bold;
-  font-size: 2vh;
-  border-radius: 5px;
-  border-color: #2c4bff;
-  border-style: solid;
-  position: relative;
-  z-index: 0;
-  background: transparent;
-  cursor: pointer;
-  color: #2c4bff;
-  padding: 2vh;
-  text-transform:uppercase;
-  transition: 0.25s;
-}
-
-.button-wrapper span.label:hover, 
-.button-wrapper span.label:focus {
-  box-shadow: inset 0 0 0 3em #2c4bff;
-  color: #fff;
-}
-
-#bg-picker {
-  display: inline-block;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 7vh;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
-}
