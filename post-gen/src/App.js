@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import './Header.js';
+import './Config.js';
+import './Canvas.js';
 
 function App() {
   return (
