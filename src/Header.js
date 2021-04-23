@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 function Header() {
     return (
         <header className="App-header">
@@ -10,4 +9,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default Header
