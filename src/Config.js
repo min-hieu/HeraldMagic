@@ -7,21 +7,22 @@ function Config() {
   return (
     <div className="App-Config">
       <div id="config-wrapper">
+        <p className="Upload-text">Upload the image</p>
+        <input id="backgroundpick" type="file" name="" />
+
         <div id="picker" className="control-items">
-          <p className="Upload-text">Upload the image</p>
-          <input id="backgroundpick" type="file" name="" />
           <button
             className="fa fa-upload btn"
             id="btn-upload"
             onClick={getFileDialog}
           >
-            <span> POST</span>
+            <span> Post</span>
           </button>
-        </div>
-
-        <div id="picker" className="control-items">
           <button className="fa fa-download btn" id="btn-save">
             <span> SAVE</span>
+          </button>
+          <button className="fa fa-plus-circle btn" id="btn-addText">
+            <span> Text</span>
           </button>
         </div>
       </div>
