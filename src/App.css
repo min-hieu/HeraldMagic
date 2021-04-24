@@ -51,19 +51,19 @@ p {
 .App-Config {
   min-height: 88vh;
   padding: 0 auto;
-  width: 30vw;
+  width: 100%;
   margin: 0;
   background-color: #f5f5f5;
 }
 .App-Canvas {
-  margin: auto;
+  justify-self: center;
 }
 
 .Upload-text {
   color: #174552;
   padding: 2vh;
   padding-top: 3vh;
-  font-size: 4vh;
+  font-size: 2.5vh;
 }
 
 .btn {
@@ -101,4 +101,5 @@ p {
 
 canvas {
   background-color: red;
+  width: 20vh;
 }
