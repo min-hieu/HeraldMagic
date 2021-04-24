@@ -25,7 +25,7 @@ function Canvas() {
       });
       canvi.add(e);
       canvi.renderAll();
-      canvi.moveTo(e, 0);
+      // canvi.moveTo(e, 0);
     });
   };
 
@@ -98,7 +98,7 @@ function Canvas() {
     const mainCanvas = new fabric.Canvas("mainCanvas", {
       height: 800,
       width: 800,
-      backgroundColor: "pink",
+      backgroundColor: "#add8ff",
       preserveObjectStacking: true,
       controlsAboveOverlay: true
     });

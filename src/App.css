@@ -116,3 +116,7 @@ p {
   left: 220px;
   top: 173px;
 }
+
+HexColorPicker {
+  max-width: 1vh;
+}
