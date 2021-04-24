@@ -3,10 +3,12 @@ import { useState } from "react";
 
 function ColorPicker() {
   const [color, setColor] = useState("#aabbcc");
+
   return (
     <div id="AppColorPicker">
-      <HexColorPicker color={color} onChange={setColor} />
-      <HexColorInput color={color} onChange={setColor} />
+      <HexColorPicker id="colorPicker" color={color} onChange={setColor} />
+      <HexColorInput id="colorPickerInput" color={color} onChange={setColor} />
+      <input type="color" id="htmlColorPicker" />
     </div>
   );
 }

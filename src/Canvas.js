@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import logo from "./assets/herald-logo.png";
 import bg from "./assets/bg-overlay.png";
 import fg from "./assets/herald-post-template.png";
-import saveAs from 'file-saver';
 
 function Canvas() {
   const base = <canvas id="mainCanvas"></canvas>;
@@ -37,19 +36,6 @@ function Canvas() {
     };
   };
 
-  const downloadImage = (canvi) => {
-    var link = document.querySelector('#btn-save');   
-    link.onclick =  () => {
-      var imgData = canvi.toDataURL({    format:'jpeg', 
-      quality: 1,
-      multipier: 3,
-      left: 220,
-      top: 200,
-      width: 360,
-      height: 434});
-      saveAs(imgData, "myIMG.png");
-    };
-  }
   const setOverlay = (canvi) => {
     canvi.setOverlayImage(bg, canvi.renderAll.bind(canvi), {
       opacity: 0.5,
@@ -108,6 +94,20 @@ function Canvas() {
     return textbox;
   };
 
+  const changeTextColor = (canvi) => {
+    let colorInput = document.querySelector("#htmlColorPicker");
+    let activeTextArr = [];
+    let val = "#ffffff";
+    colorInput.onclick = () => {
+      activeTextArr = canvi.getActiveObjects();
+    };
+    colorInput.onchange = () => {
+      val = colorInput.value;
+      console.log(activeTextArr, val);
+      activeTextArr.forEach((e) => e.set("fill", val));
+    };
+  };
+
   const initCanvas = () => {
     const mainCanvas = new fabric.Canvas("mainCanvas", {
       height: 800,
@@ -119,8 +119,8 @@ function Canvas() {
     setOverlay(mainCanvas);
     addImage(mainCanvas, logo);
     addNewText(mainCanvas);
-    downloadImage(mainCanvas);
     pickBg(mainCanvas);
+    changeTextColor(mainCanvas);
     // clipBg(mainCanvas);
     return mainCanvas;
   };
