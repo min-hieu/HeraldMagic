@@ -2,6 +2,7 @@ import './App.css';
 import Header from './Header.js';
 import Canvas from './Canvas.js';
 import Config from './Config.js';
+import './Fabric-customize.js';
 
 function App() {
   return (

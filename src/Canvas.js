@@ -4,7 +4,6 @@ import logo from './assets/herald-logo.png';
 import bg from './assets/bg-overlay.png';
 import fg from './assets/herald-post-template.png'
 
-var Textbox;
 function Canvas() {
     const base = (  <canvas id="mainCanvas"></canvas>);
     const baseimg = (<img src="public/logo512.png" id="my-image"></img>)
@@ -16,14 +15,12 @@ function Canvas() {
     const addImage = (canvi, url) => {
       fabric.Image.fromURL(url, (e) => {
         e.set ({
-          borderColor: '#174552',
-          cornerColor: '#ffffff',
           originY: 'center',
           originX: 'center',
           scaleX: 0.5,
           scaleY: 0.5,
           left: 400,
-          top: 300,
+          top: 350,
         });
         canvi.add(e);
         canvi.renderAll();
@@ -76,15 +73,13 @@ function Canvas() {
         originY: 'center',
         originX: 'center',
         left: 400,
-        top: 500,
+        top: 530,
         width: 320,
         fontSize: 28,
         fill: '#fff',
         fontFamily: 'Open Sans',
         fontWeight: 800,
         textAlign: 'center',      
-        borderColor: '#174552',
-        cornerColor: '#ffffff',
         cornerSize: 12,
         transparentCorners: false
       });
