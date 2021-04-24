@@ -1,112 +1,134 @@
 import { fabric } from "fabric";
-import React, { useState, useEffect } from 'react';
-import logo from './assets/herald-logo.png';
-import bg from './assets/bg-overlay.png';
-import fg from './assets/herald-post-template.png'
+import React, { useState, useEffect } from "react";
+import logo from "./assets/herald-logo.png";
+import bg from "./assets/bg-overlay.png";
+import fg from "./assets/herald-post-template.png";
+import saveAs from 'file-saver';
 
 function Canvas() {
-    const base = (  <canvas id="mainCanvas"></canvas>);
-    const baseimg = (<img src="public/logo512.png" id="my-image"></img>)
+  const base = <canvas id="mainCanvas"></canvas>;
+  const baseimg = <img src="public/logo512.png" id="my-image"></img>;
 
-    const [canvas, setCanvas] = useState('');
-    useEffect(() => {
-        setCanvas(initCanvas());}, [])
-    
-    const addImage = (canvi, url) => {
-      fabric.Image.fromURL(url, (e) => {
-        e.set ({
-          originY: 'center',
-          originX: 'center',
-          scaleX: 0.5,
-          scaleY: 0.5,
-          left: 400,
-          top: 350,
-        });
-        canvi.add(e);
-        canvi.renderAll();
-        canvi.moveTo(e, 0);
-      });
-    }
+  const [canvas, setCanvas] = useState("");
+  useEffect(() => {
+    setCanvas(initCanvas());
+  }, []);
 
-    const setOverlay = (canvi) => {
-      canvi.setOverlayImage(bg, canvi.renderAll.bind(canvi), {
-        opacity: 0.5,
-        angle: 0,
-        left: 0,
-        top: 0,
-        originX: 'left',
-        originY: 'top',
-        crossOrigin: 'anonymous'
-      });
-    }
-
-    
-    const pickBg = (canvi) => {
-      var bgpicker = document.querySelector('#backgroundpick');
-      bgpicker.onchange = (e) => {
-        var file = e.target.files[0];
-        var reader = new FileReader();
-        reader.onload = function(file) {
-            addImage(canvi, file.target.result);
-        }
-        clipBg(canvi);
-        return reader.readAsDataURL(file);
-      }
-    }
-
-    const clipBg = (img) => {
-        const rect = new fabric.Rect({
-          originX: 'center',
-          originY: 'center',
-          left: 400,
-          top: 400,
-          height: 454,
-          width: 360,
-          absolutePositioned: true,
-          fill: 'yellow'
-        });
-        img.clipPath = rect;
-    }    
-
-    const addText = (canvi) => {
-      var textbox = new fabric.Textbox('Caption goes here - you can resize the text with the handles', {
-        originY: 'center',
-        originX: 'center',
+  const addImage = (canvi, url) => {
+    fabric.Image.fromURL(url, (e) => {
+      e.set({
+        originY: "center",
+        originX: "center",
+        scaleX: 0.5,
+        scaleY: 0.5,
         left: 400,
-        top: 530,
-        width: 320,
-        fontSize: 28,
-        fill: '#fff',
-        fontFamily: 'Open Sans',
-        fontWeight: 800,
-        textAlign: 'center',      
-        cornerSize: 12,
-        transparentCorners: false
+        top: 350
       });
-      canvi.add(textbox);
-      return textbox;
-    }
-     
-    const initCanvas = () => {
-      const mainCanvas = new fabric.Canvas('mainCanvas', {
-            height: 800,
-            width: 800,
-            backgroundColor: 'pink',
-            preserveObjectStacking: true,
-            controlsAboveOverlay: true,
-      })
-      setOverlay(mainCanvas)
-      addImage(mainCanvas, logo);
-      var text = addText(mainCanvas);
-      pickBg(mainCanvas);
-      // clipBg(mainCanvas); 
-      return mainCanvas;
-    }
+      canvi.add(e);
+      canvi.renderAll();
+      // canvi.moveTo(e, 0);
+    });
+  };
 
-    return(
-    <div className = "App-Canvas">
+  const addNewText = (canvi) => {
+    var addTextBtn = document.querySelector("#btn-addText");
+    addTextBtn.onclick = () => {
+      addText(canvi, "New Text");
+    };
+  };
+
+  const downloadImage = (canvi) => {
+    var link = document.querySelector('#btn-save');   
+    link.onclick =  () => {
+      var imgData = canvi.toDataURL({    format:'jpeg', 
+      quality: 1,
+      multipier: 3,
+      left: 220,
+      top: 200,
+      width: 360,
+      height: 434});
+      saveAs(imgData, "myIMG.png");
+    };
+  }
+  const setOverlay = (canvi) => {
+    canvi.setOverlayImage(bg, canvi.renderAll.bind(canvi), {
+      opacity: 0.5,
+      angle: 0,
+      left: 0,
+      top: 0,
+      originX: "left",
+      originY: "top",
+      crossOrigin: "anonymous"
+    });
+  };
+
+  const pickBg = (canvi) => {
+    var bgpicker = document.querySelector("#backgroundpick");
+    bgpicker.onchange = (e) => {
+      var file = e.target.files[0];
+      var reader = new FileReader();
+      reader.onload = function (file) {
+        addImage(canvi, file.target.result);
+      };
+      clipBg(canvi);
+      return reader.readAsDataURL(file);
+    };
+  };
+
+  const clipBg = (img) => {
+    const rect = new fabric.Rect({
+      originX: "center",
+      originY: "center",
+      left: 400,
+      top: 400,
+      height: 454,
+      width: 360,
+      absolutePositioned: true,
+      fill: "yellow"
+    });
+    img.clipPath = rect;
+  };
+
+  const addText = (canvi, text) => {
+    var textbox = new fabric.Textbox(text, {
+      originY: "center",
+      originX: "center",
+      left: 400,
+      top: 530,
+      width: 320,
+      fontSize: 28,
+      fill: "#fff",
+      fontFamily: "Open Sans",
+      fontWeight: 800,
+      textAlign: "center",
+      cornerSize: 12,
+      transparentCorners: false
+    });
+    canvi.add(textbox);
+    return textbox;
+  };
+
+  const initCanvas = () => {
+    const mainCanvas = new fabric.Canvas("mainCanvas", {
+      height: 800,
+      width: 800,
+      backgroundColor: "#add8ff",
+      preserveObjectStacking: true,
+      controlsAboveOverlay: true
+    });
+    setOverlay(mainCanvas);
+    addImage(mainCanvas, logo);
+    addNewText(mainCanvas);
+    downloadImage(mainCanvas);
+    pickBg(mainCanvas);
+    // clipBg(mainCanvas);
+    return mainCanvas;
+  };
+
+  return (
+    <div className="App-Canvas">
       <canvas id="mainCanvas" />
-      <img className="gui" src = {fg}></img>
+      <img className="gui" src={fg}></img>
     </div>
   );
 }
