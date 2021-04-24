@@ -4,6 +4,7 @@ import logo from './assets/herald-logo.png';
 import bg from './assets/bg-overlay.png';
 import fg from './assets/herald-post-template.png'
 
+var Textbox;
 function Canvas() {
     const base = (  <canvas id="mainCanvas"></canvas>);
     const baseimg = (<img src="public/logo512.png" id="my-image"></img>)
@@ -26,6 +27,7 @@ function Canvas() {
         });
         canvi.add(e);
         canvi.renderAll();
+        canvi.moveTo(e, 0);
       });
     }
 
@@ -41,14 +43,29 @@ function Canvas() {
       });
     }
 
+    
+    const pickBg = (canvi) => {
+      var bgpicker = document.querySelector('#backgroundpick');
+      bgpicker.onchange = (e) => {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(file) {
+            addImage(canvi, file.target.result);
+        }
+        clipBg(canvi);
+        return reader.readAsDataURL(file);
+      }
+    }
+
     const clipBg = (img) => {
         const rect = new fabric.Rect({
           originX: 'center',
           originY: 'center',
           left: 400,
           top: 400,
-          height: 640,
+          height: 454,
           width: 360,
+          absolutePositioned: true,
           fill: 'yellow'
         });
         img.clipPath = rect;
@@ -71,9 +88,8 @@ function Canvas() {
         cornerSize: 12,
         transparentCorners: false
       });
-      // Add shadow to the textbox with this line
-      // textbox.setShadow("0px 0px 10px rgba(0, 0, 0, 1)");
       canvi.add(textbox);
+      return textbox;
     }
      
     const initCanvas = () => {
@@ -86,7 +102,8 @@ function Canvas() {
       })
       setOverlay(mainCanvas)
       addImage(mainCanvas, logo);
-      addText(mainCanvas);
+      var text = addText(mainCanvas);
+      pickBg(mainCanvas);
       // clipBg(mainCanvas); 
       return mainCanvas;
     }
