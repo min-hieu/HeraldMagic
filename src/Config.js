@@ -1,3 +1,5 @@
+import ColorPicker from "./ColorPicker";
+
 function getFileDialog() {
   let fileDialog = document.getElementById("backgroundpick");
   fileDialog.click();
@@ -25,6 +27,7 @@ function Config() {
             <span> Text</span>
           </button>
         </div>
+        <ColorPicker />
       </div>
     </div>
   );

@@ -116,3 +116,8 @@ p {
   left: 220px;
   top: 173px;
 }
+
+.react-colorful {
+  padding: 3vh;
+  margin: 0 auto;
+}
