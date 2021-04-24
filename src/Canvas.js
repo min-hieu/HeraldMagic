@@ -5,7 +5,10 @@ function Canvas() {
     const base = (  <canvas id="mainCanvas"></canvas>);
     const [canvas, setCanvas] = useState('');
     useEffect(() => {
-        setCanvas(initCanvas());}, [])
+            setCanvas(initCanvas());
+        }, 
+        []
+    )
     
     const initCanvas = () => (
         new fabric.Canvas('mainCanvas', {
@@ -17,10 +20,10 @@ function Canvas() {
      );
 
     return(
-    <div className = "App-Canvas">
-      <canvas id="mainCanvas" />
-    </div>
-  );
+        <div className = "App-Canvas">
+            <canvas id="mainCanvas" />
+        </div>
+    );
 }
 
 export default Canvas;
