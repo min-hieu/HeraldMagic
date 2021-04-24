@@ -1,4 +1,7 @@
-import downloadImg from './assets/download.svg'
+function getFileDialog() {
+  let fileDialog = document.getElementById("backgroundpick");
+  fileDialog.click();
+}
 
 function Config() {
     return (
@@ -16,8 +19,9 @@ function Config() {
                 </div>
             </div>
         </div>
-        
-    )
+      </div>
+    </div>
+  );
 }
 
-export default Config
+export default Config;
