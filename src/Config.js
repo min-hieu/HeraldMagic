@@ -7,7 +7,7 @@ function Config() {
   return (
     <div className="App-Config">
       <div id="config-wrapper">
-        <div id="picker" class="control-items">
+        <div id="picker" className="control-items">
           <p className="Upload-text">Upload the image</p>
           <input id="backgroundpick" type="file" name="" />
           <button

@@ -2,6 +2,7 @@ import { fabric } from "fabric";
 import React, { useState, useEffect } from 'react';
 import logo from './assets/herald-logo.png';
 import bg from './assets/bg-overlay.png';
+import fg from './assets/herald-post-template.png'
 
 function Canvas() {
     const base = (  <canvas id="mainCanvas"></canvas>);
@@ -21,7 +22,7 @@ function Canvas() {
           scaleX: 0.5,
           scaleY: 0.5,
           left: 400,
-          top: 200,
+          top: 300,
         });
         canvi.add(e);
         canvi.renderAll();
@@ -58,7 +59,7 @@ function Canvas() {
         originY: 'center',
         originX: 'center',
         left: 400,
-        top: 600,
+        top: 500,
         width: 320,
         fontSize: 28,
         fill: '#fff',
@@ -93,6 +94,7 @@ function Canvas() {
     return(
     <div className = "App-Canvas">
       <canvas id="mainCanvas" />
+      <img className="gui" src = {fg}></img>
     </div>
   );
 }

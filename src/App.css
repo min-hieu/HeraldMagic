@@ -63,6 +63,7 @@ p {
 
 .App-Canvas {
   margin: auto;
+  position: relative;
 }
 
 .Upload-text {
@@ -104,4 +105,14 @@ p {
 
 #body {
   display: grid;
+}
+
+.gui {
+  position: absolute;
+  z-index: 100;
+  width: 360px;
+  height: 454px;
+  pointer-events: none;
+  left: 220px;
+  top: 173px;
 }
