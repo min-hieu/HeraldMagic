@@ -1,9 +1,26 @@
+import { fabric } from "fabric";
+import React, { useState, useEffect } from 'react';
+
 function Canvas() {
-    return (
-        <div id="App-Canvas">
-            <canvas id="mainCanvas" width="360" height="360"></canvas>
-        </div>
-    )
+    const base = (  <canvas id="mainCanvas"></canvas>);
+    const [canvas, setCanvas] = useState('');
+    useEffect(() => {
+        setCanvas(initCanvas());}, [])
+    
+    const initCanvas = () => (
+        new fabric.Canvas('mainCanvas', {
+            height: 360,
+            width: 360,
+            backgroundColor: 'pink',
+            preserveObjectStacking: true
+        })
+     );
+
+    return(
+    <div className = "App-Canvas">
+      <canvas id="mainCanvas" />
+    </div>
+  );
 }
 
-export default Canvas
+export default Canvas;
