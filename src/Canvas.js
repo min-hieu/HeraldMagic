@@ -27,10 +27,10 @@ function Canvas() {
       var imgData = canvi.toDataURL({ format:'png', 
         quality: 1,
         multipier: 3,
-        width: 600,
-        height: 600,
-        left: 100,
-        top: 100,
+        width: 530,
+        height: 530,
+        left: 135,
+        top: 135,
       });
       saveAs(imgData, "magic-image.png");
     };
@@ -55,8 +55,8 @@ function Canvas() {
       originY: "center",
       left: 400,
       top: 400,
-      width: 529,
-      height: 529,
+      width: 530,
+      height: 530,
       absolutePositioned: true,
       fill: "yellow"
     });
