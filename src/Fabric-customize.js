@@ -26,6 +26,8 @@ fabric.Object.prototype.controls.deleteControl = new fabric.Control({
 fabric.Textbox.prototype.controls.deleteControl = new fabric.Control({
     x: 0.5,
     y: -0.5,
+    offsetY: -20,
+    offsetX: 20,
     cursorStyle: 'pointer',
     mouseUpHandler: deleteObject,
     render: renderIcon,
