@@ -95,20 +95,29 @@ function Canvas(props) {
     return textbox;
   };
 
-
-  const ChangeTextColor = (canvi) => {
+  const changeTextColor = (canvi) => {
+    let colorPicker = document.querySelector("#colorPicker");
     let colorInput = document.querySelector("#colorPickerInput");
-    let activeTextArr = canvi.getActiveObjects();
+    let activeTextArr = [];
     let val = "#ffffff";
-
-    // console.log(activeTextArr, val);
-    props.onchange()
-    val = props.colorState.color;
-    console.log(activeTextArr, val);
-    colorHack = val;
-
+    colorPicker.onmousedown = () => {
+      activeTextArr = canvi.getActiveObjects();
+      console.log(activeTextArr);
+    };
+    colorPicker.onmousemove = () => {
+      val = colorInput.value;
+      activeTextArr.forEach((e) => e.set("fill", `#${val}`));
+      canvi.renderAll()
+    };
+    colorInput.onmousedown = () => {
+      activeTextArr = canvi.getActiveObjects();
+      console.log(activeTextArr);
+    };
     colorInput.onchange = () => {
-      
+      val = colorInput.value;
+      console.log(activeTextArr, val);
+      activeTextArr.forEach((e) => e.set("fill", `#${val}`));
+      canvi.renderAll()
     };
   };
 
