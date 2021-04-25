@@ -110,11 +110,11 @@ p {
 .gui {
   position: absolute;
   z-index: 100;
-  width: 360px;
-  height: 454px;
+  width: 600px;
+  height: 738px;
   pointer-events: none;
-  left: 220px;
-  top: 173px;
+  left: 100px;
+  top: 31px;
 }
 
 .react-colorful {

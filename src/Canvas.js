@@ -48,13 +48,13 @@ function Canvas() {
       top: 200,
       width: 360,
       height: 434});
-      saveAs(imgData, "final-post.png");
+      saveAs(imgData, "magic-image.png");
     };
   }
 
   const setOverlay = (canvi) => {
     canvi.setOverlayImage(bg, canvi.renderAll.bind(canvi), {
-      opacity: 0.5,
+      opacity: 0.2,
       angle: 0,
       left: 0,
       top: 0,
@@ -83,8 +83,8 @@ function Canvas() {
       originY: "center",
       left: 400,
       top: 400,
-      height: 454,
-      width: 360,
+      width: 528,
+      height: 528,
       absolutePositioned: true,
       fill: "yellow"
     });
@@ -141,11 +141,11 @@ function Canvas() {
     const mainCanvas = new fabric.Canvas("mainCanvas", {
       height: 800,
       width: 800,
-      backgroundColor: "#add8ff",
+      backgroundColor: "#fff",
       preserveObjectStacking: true,
       controlsAboveOverlay: true
     });
-    setOverlay(mainCanvas);
+    // setOverlay(mainCanvas);
     addImage(mainCanvas, logo);
     addNewText(mainCanvas);
     downloadImage(mainCanvas);
