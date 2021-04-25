@@ -5,27 +5,29 @@ function getFileDialog() {
   fileDialog.click();
 }
 
+function ConfigBtn(props) {
+  const btnClass = "fa fa-" + props.icon + " btn";
+  return (
+    <button 
+      className={btnClass}
+      id={props.id}
+      onClick={(props.click)? props.click:undefined}
+    >
+      <span>{props.text}</span>
+    </button>
+  )
+}
+
 function Config(props) {
   return (
     <div className="App-Config">
       <div id="config-wrapper">
         <p className="Upload-text">Upload the image</p>
         <input id="backgroundpick" type="file" name="" />
-
         <div id="picker" className="control-items">
-          <button
-            className="fa fa-upload btn"
-            id="btn-upload"
-            onClick={getFileDialog}
-          >
-            <span> Post</span>
-          </button>
-          <button className="fa fa-download btn" id="btn-save">
-            <span> Save</span>
-          </button>
-          <button className="fa fa-plus-circle btn" id="btn-addText">
-            <span> Text</span>
-          </button>
+          <ConfigBtn icon="upload" id="btn-upload" text=" POST" click={getFileDialog} />
+          <ConfigBtn icon="download" id="btn-save" text=" SAVE" click='' />
+          <ConfigBtn icon="plus-circle" id="btn-addText" text=" TEXT" click='' />
         </div>
         <ColorPicker colorState={props.colorState}/>
       </div>
