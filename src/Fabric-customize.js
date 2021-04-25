@@ -2,7 +2,8 @@ import { fabric } from "fabric";
 fabric.Object.prototype.controls.deleteControl = new fabric.Control({
     x: 0.5,
     y: -0.5,
-    offsetY: 16,
+    offsetY: -20,
+    offsetX: 20,
     cursorStyle: 'pointer',
     mouseUpHandler: deleteObject,
     render: renderIcon,
@@ -15,7 +16,8 @@ fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.controls.deleteControl = new fabric.Control({
     x: 0.5,
     y: -0.5,
-    offsetY: 16,
+    offsetY: -20,
+    offsetX: 20,
     cursorStyle: 'pointer',
     mouseUpHandler: deleteObject,
     render: renderIcon,
@@ -24,7 +26,6 @@ fabric.Object.prototype.controls.deleteControl = new fabric.Control({
 fabric.Textbox.prototype.controls.deleteControl = new fabric.Control({
     x: 0.5,
     y: -0.5,
-    offsetY: 16,
     cursorStyle: 'pointer',
     mouseUpHandler: deleteObject,
     render: renderIcon,
@@ -44,7 +45,7 @@ function deleteObject(eventData, transform) {
 function renderIcon(ctx, left, top, styleOverride, fabricObject) {
     var size = this.cornerSize;
     ctx.save();
-    ctx.translate(left+20, top-36);
+    ctx.translate(left, top);
     ctx.rotate(fabric.util.degreesToRadians(fabricObject.angle));
     ctx.drawImage(img, -size/2, -size/2, size, size);
     ctx.restore();
