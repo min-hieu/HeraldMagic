@@ -103,7 +103,7 @@ function Canvas() {
       activeTextArr = canvi.getActiveObjects();
       console.log(activeTextArr);
     };
-    colorPicker.onmouseup = () => {
+    colorPicker.onmousemove = () => {
       val = colorInput.value;
       activeTextArr.forEach((e) => e.set("fill", `#${val}`));
       canvi.renderAll()
