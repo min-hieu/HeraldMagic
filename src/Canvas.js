@@ -1,7 +1,6 @@
 import { fabric } from "fabric";
 import React, { useState, useEffect } from "react";
 import logo from "./assets/herald-logo.png";
-import bg from "./assets/bg-overlay.png";
 import fg from "./assets/herald-post-template.png";
 import {saveAs} from 'file-saver';
 
@@ -42,27 +41,17 @@ function Canvas() {
     var link = document.querySelector('#btn-save');   
     link.onclick =  () => {
       var imgData = canvi.toDataURL({ format:'png', 
-      quality: 1,
-      multipier: 3,
-      left: 220,
-      top: 200,
-      width: 360,
-      height: 434});
+        quality: 1,
+        multipier: 3,
+        width: 600,
+        height: 738,
+        left: 100,
+        top: 31,
+      });
       saveAs(imgData, "magic-image.png");
     };
   }
 
-  const setOverlay = (canvi) => {
-    canvi.setOverlayImage(bg, canvi.renderAll.bind(canvi), {
-      opacity: 0.2,
-      angle: 0,
-      left: 0,
-      top: 0,
-      originX: "left",
-      originY: "top",
-      crossOrigin: "anonymous"
-    });
-  };
 
   const pickBg = (canvi) => {
     var bgpicker = document.querySelector("#backgroundpick");
@@ -145,13 +134,11 @@ function Canvas() {
       preserveObjectStacking: true,
       controlsAboveOverlay: true
     });
-    // setOverlay(mainCanvas);
     addImage(mainCanvas, logo);
     addNewText(mainCanvas);
     downloadImage(mainCanvas);
     pickBg(mainCanvas);
     changeTextColor(mainCanvas);
-    // clipBg(mainCanvas);
     return mainCanvas;
   };
 
