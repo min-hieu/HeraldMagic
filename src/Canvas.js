@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./assets/herald-logo.png";
 import fg from "./assets/herald-post-template.png";
 import {saveAs} from 'file-saver';
+import { isCompositeComponent } from "react-dom/test-utils";
 
 function Canvas() {
   const base = <canvas id="mainCanvas"></canvas>;
@@ -108,7 +109,7 @@ function Canvas() {
     colorPicker.onmousemove = () => {
       val = colorInput.value;
       activeTextArr.forEach((e) => e.set("fill", `#${val}`));
-      canvi.renderAll()
+      canvi.renderAll();
     };
     colorInput.onmousedown = () => {
       activeTextArr = canvi.getActiveObjects().filter(e => e instanceof fabric.Textbox);
@@ -118,10 +119,22 @@ function Canvas() {
       val = colorInput.value;
       console.log(activeTextArr, val);
       activeTextArr.forEach((e) => e.set("fill", `#${val}`));
-      canvi.renderAll()
+      canvi.renderAll();
     };
   };
 
+  const changeTextFont = (canvi) => {
+    let fontArr = document.querySelectorAll('.fontOption');
+    let activeTextArr = [];
+    fontArr.forEach((font) => {
+      font.onclick = () => {
+        activeTextArr = canvi.getActiveObjects().filter(e => e instanceof fabric.Textbox);
+        activeTextArr.forEach((e) => e.set("fontFamily", font.innerHTML));
+        console.log(activeTextArr, font.innerHTML);
+        canvi.renderAll();
+      }
+    })
+  }
 
   const initCanvas = () => {
     const mainCanvas = new fabric.Canvas("mainCanvas", {
@@ -136,6 +149,7 @@ function Canvas() {
     downloadImage(mainCanvas);
     pickBg(mainCanvas);
     changeTextColor(mainCanvas);
+    changeTextFont(mainCanvas);
     return mainCanvas;
   };
 

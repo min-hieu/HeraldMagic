@@ -20,12 +20,12 @@ function ConfigBtn(props) {
 
 function Fonts() {
   return (
-    <div class="dropdown">
+    <div className="dropdown">
       <ConfigBtn icon="font dropbtn" id="select-font" text=" font"/>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+      <div className="dropdown-content">
+        <p className="fontOption" id='pickfont1'>Cheltenham</p>
+        <p className="fontOption" id='pickfont2'>Roboto</p>
+        <p className="fontOption" id='pickfont3'>Times New Roman</p>
       </div>
     </div>
   )
@@ -42,8 +42,8 @@ function Config(props) {
           <ConfigBtn icon="download" id="btn-save" text=" SAVE" />
           <ConfigBtn icon="plus-circle" id="btn-addText" text=" TEXT"/>
         </div>
-        <ColorPicker colorState={props.colorState}/>
         <Fonts />
+        <ColorPicker colorState={props.colorState}/>
       </div>
     </div>
   );
