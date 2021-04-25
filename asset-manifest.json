@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/HeraldMagic/static/css/main.8b6a5e60.chunk.css",
-    "main.js": "/HeraldMagic/static/js/main.fa1a7c36.chunk.js",
-    "main.js.map": "/HeraldMagic/static/js/main.fa1a7c36.chunk.js.map",
-    "runtime-main.js": "/HeraldMagic/static/js/runtime-main.7d19a58f.js",
-    "runtime-main.js.map": "/HeraldMagic/static/js/runtime-main.7d19a58f.js.map",
-    "static/js/2.6b63e190.chunk.js": "/HeraldMagic/static/js/2.6b63e190.chunk.js",
-    "static/js/2.6b63e190.chunk.js.map": "/HeraldMagic/static/js/2.6b63e190.chunk.js.map",
-    "static/js/3.221e7ddc.chunk.js": "/HeraldMagic/static/js/3.221e7ddc.chunk.js",
-    "static/js/3.221e7ddc.chunk.js.map": "/HeraldMagic/static/js/3.221e7ddc.chunk.js.map",
+    "main.css": "/HeraldMagic/static/css/main.afe467ce.chunk.css",
+    "main.js": "/HeraldMagic/static/js/main.2471ae13.chunk.js",
+    "main.js.map": "/HeraldMagic/static/js/main.2471ae13.chunk.js.map",
+    "runtime-main.js": "/HeraldMagic/static/js/runtime-main.352de9f2.js",
+    "runtime-main.js.map": "/HeraldMagic/static/js/runtime-main.352de9f2.js.map",
+    "static/js/2.46d53864.chunk.js": "/HeraldMagic/static/js/2.46d53864.chunk.js",
+    "static/js/2.46d53864.chunk.js.map": "/HeraldMagic/static/js/2.46d53864.chunk.js.map",
+    "static/js/3.6097c4e9.chunk.js": "/HeraldMagic/static/js/3.6097c4e9.chunk.js",
+    "static/js/3.6097c4e9.chunk.js.map": "/HeraldMagic/static/js/3.6097c4e9.chunk.js.map",
     "index.html": "/HeraldMagic/index.html",
-    "static/css/main.8b6a5e60.chunk.css.map": "/HeraldMagic/static/css/main.8b6a5e60.chunk.css.map",
-    "static/js/2.6b63e190.chunk.js.LICENSE.txt": "/HeraldMagic/static/js/2.6b63e190.chunk.js.LICENSE.txt",
+    "static/css/main.afe467ce.chunk.css.map": "/HeraldMagic/static/css/main.afe467ce.chunk.css.map",
+    "static/js/2.46d53864.chunk.js.LICENSE.txt": "/HeraldMagic/static/js/2.46d53864.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/HeraldMagic/static/media/CheltenhamStdBoldItalic.b0a0eba6.woff",
     "static/media/herald-logo.8d473bf3.png": "/HeraldMagic/static/media/herald-logo.8d473bf3.png",
     "static/media/herald-post-template.c6de8d3c.png": "/HeraldMagic/static/media/herald-post-template.c6de8d3c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7d19a58f.js",
-    "static/js/2.6b63e190.chunk.js",
-    "static/css/main.8b6a5e60.chunk.css",
-    "static/js/main.fa1a7c36.chunk.js"
+    "static/js/runtime-main.352de9f2.js",
+    "static/js/2.46d53864.chunk.js",
+    "static/css/main.afe467ce.chunk.css",
+    "static/js/main.2471ae13.chunk.js"
   ]
 }
