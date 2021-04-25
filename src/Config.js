@@ -5,7 +5,7 @@ function getFileDialog() {
   fileDialog.click();
 }
 
-function Config() {
+function Config(props) {
   return (
     <div className="App-Config">
       <div id="config-wrapper">
@@ -27,7 +27,7 @@ function Config() {
             <span> Text</span>
           </button>
         </div>
-        <ColorPicker />
+        <ColorPicker colorState={props.colorState}/>
       </div>
     </div>
   );

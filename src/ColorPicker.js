@@ -1,8 +1,7 @@
 import { HexColorPicker, HexColorInput } from "react-colorful";
-import { useState } from "react";
 
-function ColorPicker() {
-  const [color, setColor] = useState("#aabbcc");
+function ColorPicker(props) {
+  const [color, setColor] = props.colorState;
 
   return (
     <div id="AppColorPicker">

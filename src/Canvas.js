@@ -4,11 +4,12 @@ import logo from "./assets/herald-logo.png";
 import bg from "./assets/bg-overlay.png";
 import fg from "./assets/herald-post-template.png";
 
-function Canvas() {
+function Canvas(props) {
   const base = <canvas id="mainCanvas"></canvas>;
   const baseimg = <img src="public/logo512.png" id="my-image"></img>;
 
   const [canvas, setCanvas] = useState("");
+
   useEffect(() => {
     setCanvas(initCanvas());
   }, []);
@@ -94,19 +95,23 @@ function Canvas() {
     return textbox;
   };
 
-  const changeTextColor = (canvi) => {
-    let colorInput = document.querySelector("#htmlColorPicker");
-    let activeTextArr = [];
+
+  const ChangeTextColor = (canvi) => {
+    let colorInput = document.querySelector("#colorPickerInput");
+    let activeTextArr = canvi.getActiveObjects();
     let val = "#ffffff";
-    colorInput.onclick = () => {
-      activeTextArr = canvi.getActiveObjects();
-    };
+
+    // console.log(activeTextArr, val);
+    props.onchange()
+    val = props.colorState.color;
+    console.log(activeTextArr, val);
+    colorHack = val;
+
     colorInput.onchange = () => {
-      val = colorInput.value;
-      console.log(activeTextArr, val);
-      activeTextArr.forEach((e) => e.set("fill", val));
+      
     };
   };
+
 
   const initCanvas = () => {
     const mainCanvas = new fabric.Canvas("mainCanvas", {
@@ -120,10 +125,19 @@ function Canvas() {
     addImage(mainCanvas, logo);
     addNewText(mainCanvas);
     pickBg(mainCanvas);
-    changeTextColor(mainCanvas);
+    ChangeTextColor(mainCanvas);
     // clipBg(mainCanvas);
     return mainCanvas;
   };
+
+  useEffect(() => {
+    let canvi = document.querySelector("#mainCanvas")
+    const activeTextArr = canvi.getActiveObjects();
+    let val = props.colorState[0];
+    // console.log(activeTextArr, val)
+    // console.log(activeTextArr, val);
+    // activeTextArr.forEach((e) => e.set("fill", val));
+  });
 
   return (
     <div className="App-Canvas">
