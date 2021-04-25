@@ -14,22 +14,6 @@ function Canvas() {
     setCanvas(initCanvas());
   }, []);
 
-  const addImage = (canvi, url) => {
-    fabric.Image.fromURL(url, (e) => {
-      e.set({
-        originY: "center",
-        originX: "center",
-        scaleX: 0.5,
-        scaleY: 0.5,
-        left: 400,
-        top: 350
-      });
-      canvi.add(e);
-      canvi.renderAll();
-      // canvi.moveTo(e, 0);
-    });
-  };
-
   const addNewText = (canvi) => {
     var addTextBtn = document.querySelector("#btn-addText");
     addTextBtn.onclick = () => {
@@ -59,14 +43,13 @@ function Canvas() {
       var file = e.target.files[0];
       var reader = new FileReader();
       reader.onload = function (file) {
-        addImage(canvi, file.target.result);
+        addImageAndClip(canvi, file.target.result);
       };
-      clipBg(canvi);
-      return reader.readAsDataURL(file);
+      return file ? reader.readAsDataURL(file) : null;
     };
   };
 
-  const clipBg = (img) => {
+  const addImageAndClip = (canvi, url) => {
     const rect = new fabric.Rect({
       originX: "center",
       originY: "center",
@@ -77,7 +60,20 @@ function Canvas() {
       absolutePositioned: true,
       fill: "yellow"
     });
-    img.clipPath = rect;
+
+    fabric.Image.fromURL(url, (e) => {
+      e.set({
+        originY: "center",
+        originX: "center",
+        scaleX: 0.5,
+        scaleY: 0.5,
+        left: 400,
+        top: 350,
+        clipPath: rect,
+      });
+      canvi.add(e);
+      canvi.renderAll();
+    }); 
   };
 
   const addText = (canvi, text) => {
@@ -96,6 +92,7 @@ function Canvas() {
       transparentCorners: false
     });
     canvi.add(textbox);
+    canvi.setActiveObject(textbox);
     return textbox;
   };
 
@@ -134,7 +131,7 @@ function Canvas() {
       preserveObjectStacking: true,
       controlsAboveOverlay: true
     });
-    addImage(mainCanvas, logo);
+    addImageAndClip(mainCanvas, logo);
     addNewText(mainCanvas);
     downloadImage(mainCanvas);
     pickBg(mainCanvas);
