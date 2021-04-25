@@ -8,7 +8,6 @@ function ColorPicker(props) {
     <div id="AppColorPicker">
       <HexColorPicker id="colorPicker" color={color} onChange={setColor} />
       <HexColorInput id="colorPickerInput" color={color} onChange={setColor} />
-      <input type="color" id="htmlColorPicker" />
     </div>
   );
 }
