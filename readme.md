@@ -6,8 +6,8 @@
 
 ## Authors
 
-🧑 Mai Tung Duong (John) [![Linkedin](https://i.stack.imgur.com/gVE0j.png)](https://www.linkedin.com/in/tung-duong-john-mai/) &nbsp; [![](https://i.stack.imgur.com/tskMh.png)](https://github.com/john-mai-2605)<br/>
-🧙 Nguyen (Min) Hieu [![Linkedin](https://i.stack.imgur.com/gVE0j.png)](https://www.linkedin.com/in/min-hieu/)&nbsp;[![](https://i.stack.imgur.com/tskMh.png)](https://github.com/min-hieu)
+🧑 Mai Tung Duong (John) [![Linkedin](https://i.stack.imgur.com/gVE0j.png)](https://www.linkedin.com/in/tung-duong-john-mai/) [![](https://i.stack.imgur.com/tskMh.png)](https://github.com/john-mai-2605)<br/>
+🧙 Nguyen (Min) Hieu [![Linkedin](https://i.stack.imgur.com/gVE0j.png)](https://www.linkedin.com/in/min-hieu/) [![](https://i.stack.imgur.com/tskMh.png)](https://github.com/min-hieu)
 
 
 ## Reference
