@@ -1,8 +1,8 @@
-# Herald Magic 🧙 
+# [Herald Magic](https://min-hieu.github.io/HeraldMagic/) 🧙 
 ![version](https://img.shields.io/badge/version-1.0-brightgreen) ![](https://img.shields.io/badge/-reactjs-yellowgreen) ![](https://img.shields.io/badge/-fabricjs-yellow)
 ## About
 
-✨ A magical little react web that makes your(my) (Kaist Herald) instagram post faster than your can say "Heralda Magica"! ✨
+✨ A magical little react web that makes your (Hieu's Kaist Herald) instagram post faster than your can say "Heralda Magica"! ✨
 
 ## Authors
 
