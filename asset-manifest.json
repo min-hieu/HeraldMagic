@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/HeraldMagic/static/css/main.afe467ce.chunk.css",
-    "main.js": "/HeraldMagic/static/js/main.2471ae13.chunk.js",
-    "main.js.map": "/HeraldMagic/static/js/main.2471ae13.chunk.js.map",
-    "runtime-main.js": "/HeraldMagic/static/js/runtime-main.352de9f2.js",
-    "runtime-main.js.map": "/HeraldMagic/static/js/runtime-main.352de9f2.js.map",
+    "main.css": "/HeraldMagic/static/css/main.6eea3ecb.chunk.css",
+    "main.js": "/HeraldMagic/static/js/main.f8acaa1a.chunk.js",
+    "main.js.map": "/HeraldMagic/static/js/main.f8acaa1a.chunk.js.map",
+    "runtime-main.js": "/HeraldMagic/static/js/runtime-main.3b750c39.js",
+    "runtime-main.js.map": "/HeraldMagic/static/js/runtime-main.3b750c39.js.map",
     "static/js/2.46d53864.chunk.js": "/HeraldMagic/static/js/2.46d53864.chunk.js",
     "static/js/2.46d53864.chunk.js.map": "/HeraldMagic/static/js/2.46d53864.chunk.js.map",
-    "static/js/3.6097c4e9.chunk.js": "/HeraldMagic/static/js/3.6097c4e9.chunk.js",
-    "static/js/3.6097c4e9.chunk.js.map": "/HeraldMagic/static/js/3.6097c4e9.chunk.js.map",
+    "static/js/3.248528b2.chunk.js": "/HeraldMagic/static/js/3.248528b2.chunk.js",
+    "static/js/3.248528b2.chunk.js.map": "/HeraldMagic/static/js/3.248528b2.chunk.js.map",
     "index.html": "/HeraldMagic/index.html",
-    "static/css/main.afe467ce.chunk.css.map": "/HeraldMagic/static/css/main.afe467ce.chunk.css.map",
+    "static/css/main.6eea3ecb.chunk.css.map": "/HeraldMagic/static/css/main.6eea3ecb.chunk.css.map",
     "static/js/2.46d53864.chunk.js.LICENSE.txt": "/HeraldMagic/static/js/2.46d53864.chunk.js.LICENSE.txt",
     "static/media/App.css": "/HeraldMagic/static/media/CheltenhamStdBoldItalic.b0a0eba6.woff",
     "static/media/herald-logo.8d473bf3.png": "/HeraldMagic/static/media/herald-logo.8d473bf3.png",
     "static/media/herald-post-template.c6de8d3c.png": "/HeraldMagic/static/media/herald-post-template.c6de8d3c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.352de9f2.js",
+    "static/js/runtime-main.3b750c39.js",
     "static/js/2.46d53864.chunk.js",
-    "static/css/main.afe467ce.chunk.css",
-    "static/js/main.2471ae13.chunk.js"
+    "static/css/main.6eea3ecb.chunk.css",
+    "static/js/main.f8acaa1a.chunk.js"
   ]
 }
