@@ -21,7 +21,7 @@ function ConfigBtn(props) {
 function Fonts() {
   return (
     <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
+      <ConfigBtn icon="font dropbtn" id="select-font" text=" font"/>
       <div class="dropdown-content">
         <a href="#">Link 1</a>
         <a href="#">Link 2</a>
@@ -39,10 +39,11 @@ function Config(props) {
         <input id="backgroundpick" type="file" name="" />
         <div id="picker" className="control-items">
           <ConfigBtn icon="upload" id="btn-upload" text=" POST" click={getFileDialog} />
-          <ConfigBtn icon="download" id="btn-save" text=" SAVE" click='' />
-          <ConfigBtn icon="plus-circle" id="btn-addText" text=" TEXT" click='' />
+          <ConfigBtn icon="download" id="btn-save" text=" SAVE" />
+          <ConfigBtn icon="plus-circle" id="btn-addText" text=" TEXT"/>
         </div>
         <ColorPicker colorState={props.colorState}/>
+        <Fonts />
       </div>
     </div>
   );
