@@ -31,6 +31,15 @@ function Fonts() {
   )
 }
 
+function CheckLogo() {
+  return (
+    <label class="checkLogoContainer">Logo
+      <input type="checkbox" checked="unchecked"/>
+      <span class="checkmarkLogo"></span>
+    </label>
+  )
+}
+
 function Config(props) {
   return (
     <div className="App-Config">
@@ -42,7 +51,8 @@ function Config(props) {
           <ConfigBtn icon="download" id="btn-save" text=" SAVE" />
           <ConfigBtn icon="plus-circle" id="btn-addText" text=" TEXT"/>
         </div>
-        <Fonts />
+        <Fonts /><br />
+        {/* <CheckLogo /> */}
         <ColorPicker colorState={props.colorState}/>
       </div>
     </div>
