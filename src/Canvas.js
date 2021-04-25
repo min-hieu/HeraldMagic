@@ -44,9 +44,9 @@ function Canvas() {
         quality: 1,
         multipier: 3,
         width: 600,
-        height: 738,
+        height: 600,
         left: 100,
-        top: 31,
+        top: 100,
       });
       saveAs(imgData, "magic-image.png");
     };
@@ -72,8 +72,8 @@ function Canvas() {
       originY: "center",
       left: 400,
       top: 400,
-      width: 528,
-      height: 528,
+      width: 529,
+      height: 529,
       absolutePositioned: true,
       fill: "yellow"
     });
@@ -130,7 +130,7 @@ function Canvas() {
     const mainCanvas = new fabric.Canvas("mainCanvas", {
       height: 800,
       width: 800,
-      backgroundColor: "#fff",
+      backgroundColor: "#ffede8",
       preserveObjectStacking: true,
       controlsAboveOverlay: true
     });
