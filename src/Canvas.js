@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./assets/herald-logo.png";
 import bg from "./assets/bg-overlay.png";
 import fg from "./assets/herald-post-template.png";
+import {saveAs} from 'file-saver';
 
 function Canvas() {
   const base = <canvas id="mainCanvas"></canvas>;
@@ -36,6 +37,20 @@ function Canvas() {
       addText(canvi, "New Text");
     };
   };
+
+  const downloadImage = (canvi) => {
+    var link = document.querySelector('#btn-save');   
+    link.onclick =  () => {
+      var imgData = canvi.toDataURL({ format:'png', 
+      quality: 1,
+      multipier: 3,
+      left: 220,
+      top: 200,
+      width: 360,
+      height: 434});
+      saveAs(imgData, "final-post.png");
+    };
+  }
 
   const setOverlay = (canvi) => {
     canvi.setOverlayImage(bg, canvi.renderAll.bind(canvi), {
@@ -101,7 +116,7 @@ function Canvas() {
     let activeTextArr = [];
     let val = "#ffffff";
     colorPicker.onmousedown = () => {
-      activeTextArr = canvi.getActiveObjects();
+      activeTextArr = canvi.getActiveObjects().filter(e => e instanceof fabric.Textbox);
       console.log(activeTextArr);
     };
     colorPicker.onmousemove = () => {
@@ -110,7 +125,7 @@ function Canvas() {
       canvi.renderAll()
     };
     colorInput.onmousedown = () => {
-      activeTextArr = canvi.getActiveObjects();
+      activeTextArr = canvi.getActiveObjects().filter(e => e instanceof fabric.Textbox);
       console.log(activeTextArr);
     };
     colorInput.onchange = () => {
@@ -133,6 +148,7 @@ function Canvas() {
     setOverlay(mainCanvas);
     addImage(mainCanvas, logo);
     addNewText(mainCanvas);
+    downloadImage(mainCanvas);
     pickBg(mainCanvas);
     changeTextColor(mainCanvas);
     // clipBg(mainCanvas);

@@ -21,7 +21,7 @@ function Config(props) {
             <span> Post</span>
           </button>
           <button className="fa fa-download btn" id="btn-save">
-            <span> SAVE</span>
+            <span> Save</span>
           </button>
           <button className="fa fa-plus-circle btn" id="btn-addText">
             <span> Text</span>
