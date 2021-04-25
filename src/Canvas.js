@@ -4,7 +4,7 @@ import logo from "./assets/herald-logo.png";
 import bg from "./assets/bg-overlay.png";
 import fg from "./assets/herald-post-template.png";
 
-function Canvas(props) {
+function Canvas() {
   const base = <canvas id="mainCanvas"></canvas>;
   const baseimg = <img src="public/logo512.png" id="my-image"></img>;
 
@@ -134,19 +134,11 @@ function Canvas(props) {
     addImage(mainCanvas, logo);
     addNewText(mainCanvas);
     pickBg(mainCanvas);
-    ChangeTextColor(mainCanvas);
+    changeTextColor(mainCanvas);
     // clipBg(mainCanvas);
     return mainCanvas;
   };
 
-  useEffect(() => {
-    let canvi = document.querySelector("#mainCanvas")
-    const activeTextArr = canvi.getActiveObjects();
-    let val = props.colorState[0];
-    // console.log(activeTextArr, val)
-    // console.log(activeTextArr, val);
-    // activeTextArr.forEach((e) => e.set("fill", val));
-  });
 
   return (
     <div className="App-Canvas">
