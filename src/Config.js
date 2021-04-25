@@ -1,4 +1,5 @@
 import ColorPicker from "./ColorPicker";
+import './Config.css'
 
 function getFileDialog() {
   let fileDialog = document.getElementById("backgroundpick");
@@ -33,9 +34,9 @@ function Fonts() {
 
 function CheckLogo() {
   return (
-    <label class="checkLogoContainer">Logo
-      <input type="checkbox" checked="unchecked"/>
-      <span class="checkmarkLogo"></span>
+    <label class="container">Logo
+      <input type="checkbox" checked="checked"/>
+      <span class="checkmark"></span>
     </label>
   )
 }
